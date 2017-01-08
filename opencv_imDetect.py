@@ -4,21 +4,21 @@ import matplotlib.pyplot as plt
 
 #------------------------------ LOAD/WRITE IMAGES------------------------------------
 
-# Load image into grayscale. Aso can read as
-# IMREAD_COLOR, IMREAD_UNCHAGNED
-img = cv.imread('/home/sohail/Documents/Random_Python/watch.jpg', cv.IMREAD_GRAYSCALE)
+# # Load image into grayscale. Aso can read as
+# # IMREAD_COLOR, IMREAD_UNCHAGNED, IMREAD_GRAYSCALE
+# img = cv.imread('/home/sohail/Documents/Random_Python/watch.jpg', cv.IMREAD_COLOR)
 
-# Show image using OpenCV
-cv.imshow('image', img)
-cv.waitKey(0)
-cv.destroyAllWindows()
+# # Show image using OpenCV
+# cv.imshow('image', img)
+# cv.waitKey(0)
+# cv.destroyAllWindows()
 
-# Show image using matplotlib
-# plt.imshow(img, cmap='gray', interpolation='bicubic')
-# plt.show()
+# # Show image using matplotlib
+# # plt.imshow(img, cmap='gray', interpolation='bicubic')
+# # plt.show()
 
-# Save image by
-cv.imwrite('watchgray.png', img)
+# # Save image by
+# cv.imwrite('watchgray.png', img)
 
 
 #------------------------------ LOAD VIDEOS------------------------------------
@@ -39,3 +39,24 @@ cv.imwrite('watchgray.png', img)
 # cap.release()
 # out.release()
 # cv.destroyAllWindows()
+
+
+#------------------------------ DRAWING AND WRITING ON IMAGE------------------------------------
+img = cv.imread('/home/sohail/Documents/Random_Python/watch.jpg', cv.IMREAD_COLOR)
+
+# # Lets draw a line on image. OpenCV is BRG not RGB
+# # if want blue we use (255,0,0), RED(0.255.0)
+# # white color is (255,255,255)
+# #line(which image, start point, end point, color of line, line width)
+# cv.line(img, (0,0), (150, 150), (255, 255, 255), 15)
+
+# Lets draw rectangle
+#rectangle(image, start, end, color, width)
+cv.rectangle(img, (50,20), (200,160), (0,255,0), 3)
+
+
+
+
+cv.imshow('image', img)
+cv.waitKey(0)	
+cv.destroyAllWindows()
