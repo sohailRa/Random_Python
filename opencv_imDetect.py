@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 # # Load image into grayscale. Aso can read as
 # # IMREAD_COLOR, IMREAD_UNCHAGNED, IMREAD_GRAYSCALE
-# img = cv.imread('/home/sohail/Documents/Random_Python/watch.jpg', cv.IMREAD_COLOR)
+# img = cv.imread('watch.jpg', cv.IMREAD_COLOR)
 
 # # Show image using OpenCV
 # cv.imshow('image', img)
@@ -42,7 +42,7 @@ import matplotlib.pyplot as plt
 
 
 #------------------------------ DRAWING AND WRITING ON IMAGE------------------------------------
-img = cv.imread('/home/sohail/Documents/Random_Python/watch.jpg', cv.IMREAD_COLOR)
+img = cv.imread('watch.jpg', cv.IMREAD_COLOR)
 
 # # Lets draw a line on image. OpenCV is BRG not RGB
 # # if want blue we use (255,0,0), RED(0.255.0)
@@ -53,6 +53,8 @@ img = cv.imread('/home/sohail/Documents/Random_Python/watch.jpg', cv.IMREAD_COLO
 # Lets draw rectangle
 #rectangle(image, start, end, color, width)
 cv.rectangle(img, (50,20), (200,160), (0,255,0), 3)
+font = cv.FONT_HERSHEY_SIMPLEX
+cv.putText(img, 'Watch', (48,17), font, 0.5, (0,255,0), 1)
 
 
 
