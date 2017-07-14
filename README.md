@@ -1,3 +1,3 @@
-# Random_Python
+# Random_Stuff
 
-This Repo contains random python programs used for practice purposes
+This Repo contains random programs used for practice purposes
