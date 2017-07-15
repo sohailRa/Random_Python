@@ -17,8 +17,7 @@ void draw(){
     line(x,0,x,height);
     x = x+spacing;
   }
-  while(y < height){
+  for(y=0; y<height; y = y+spacing){
     line(0,y,width,y);
-    y = y+spacing;
   }
 }
