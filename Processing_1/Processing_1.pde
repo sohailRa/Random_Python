@@ -1,8 +1,23 @@
+float pointX;
+float xspeed;
+
 void setup() {
-  size(600, 600);
-  background(50);
+  size(600, 400);
+  pointX = 0;
+  xspeed = 10;
 }
 void draw() {
+  background(1);
+  fill(155);
   stroke(255);
-  line(pmouseX, pmouseY, mouseX, mouseY);
+  ellipse(pointX, height/2, 32,32);
+  
+  pointX = pointX + xspeed;
+  
+  if(pointX > width){
+    xspeed = -10;
+  }
+  if(pointX < 0){
+    xspeed = 10;
+  }
 }
