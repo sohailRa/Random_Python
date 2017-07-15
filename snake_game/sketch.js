@@ -1,7 +1,3 @@
-// Daniel Shiffman
-// http://codingtra.in
-// http://patreon.com/codingtrain
-// Code for: https://youtu.be/AaGK-fj-BAM
 
 var s;
 var scl = 20;
@@ -41,8 +37,6 @@ function draw() {
   fill(255, 0, 100);
   rect(food.x, food.y, scl, scl);
 }
-
-
 
 
 
