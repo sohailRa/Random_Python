@@ -2,16 +2,14 @@
 var bird;
 var score;
 var pipes = [];
-// var wing;
-// var hit;
-var die;
-// var point;
+var wing;
+var hit;
+var point;
 
 function preload(){
-	// wing = loadsound("sounds/bell.mp3");
-	// hit = loadSound("sounds/hit.wav");
-	// die = loadSound("die.wav");
-	// point = loadSound("sounds/point.wav");
+	wing = loadSound("sounds/wing.wav");
+	hit = loadSound("sounds/hit.wav");
+	point = loadSound("sounds/point.wav");
 }
 
 function setup(){
@@ -19,7 +17,6 @@ function setup(){
 	bird = new Bird();
 	pipes.push(new Pipe());
 	score = 0;
-
 }
 
 
@@ -34,15 +31,17 @@ function draw(){
 			fill(255,0,0);
 			textAlign(CENTER);
 			text("Game Over!", width/2, height/2);
-			// die.play();
+			hit.play();
 			noLoop();
 		}
 
 		if(pipes[i].offscreen()){
 			pipes.splice(i, 1);
 		}
-		if(pipes[i].point(bird))
+		if(pipes[i].point(bird)){
 			score++;
+			point.play();
+		}
 	}
 	bird.show();
 	bird.update();
@@ -51,7 +50,6 @@ function draw(){
 		pipes.push(new Pipe());
 	}
 
-	
 	textSize(64);
 	fill(0,102,153);
 	textAlign(CENTER);
@@ -62,6 +60,7 @@ function draw(){
 
 function keyPressed(){
 	if(key == ' '){
+		wing.play();
 		bird.up();
 	}
 }
