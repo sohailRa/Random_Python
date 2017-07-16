@@ -10,9 +10,9 @@ function Pipe(){
 	this.highlight = false;
 
 	this.show = function(){
-		fill(255);
+		fill(0,204,0);
 		if(this.highlight)
-			fill(255,0,0);
+			fill(0,204,0);
 		rect(this.x, 0, this.w, this.top);
 		rect(this.x, height-this.bottom, this.w, this.bottom);		
 	}
