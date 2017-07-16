@@ -1,6 +1,7 @@
 // http://localhost:8000
 // python -m SimpleHTTPServer
 var bird;
+var bird_img;
 var score;
 var pipes = [];
 var wing;
@@ -13,6 +14,8 @@ function preload(){
 	wing = loadSound("sounds/wing.wav");
 	hit = loadSound("sounds/hit.wav");
 	point = loadSound("sounds/point.wav");
+	bird_img = loadImage("f_bird.png");
+
 }
 
 function setup(){

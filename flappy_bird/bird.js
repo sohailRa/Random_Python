@@ -7,8 +7,10 @@ function Bird() {
 	this.velocity = 0;
 
 	this.show = function() {
-		fill(255,255,0);
-		ellipse(this.x, this.y, 32,32);
+		// fill(255,255,0);
+		// ellipse(this.x, this.y, 32,32);
+		imageMode(CENTER);
+		image(bird_img, this.x, this.y, bird_img.width/3, bird_img.height/3);
 	}
 	this.up = function(){
 		this.velocity+= this.lift;
