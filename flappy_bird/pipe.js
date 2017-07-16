@@ -1,6 +1,9 @@
 function Pipe(){
-	this.top = random(height/2);
-	this.bottom = random(height/2);
+
+	var spacing = random(80, height/4);
+	var centery = random(spacing, height-spacing);
+	this.top = centery - spacing/2;
+	this.bottom = height - (centery + spacing/2);
 	this.x = width;
 	this.w = 35;
 	this.speed = 3;
@@ -20,6 +23,10 @@ function Pipe(){
 
 	this.offscreen = function(){
 		return (this.x < -this.w);
+	}
+
+	this.point = function(){
+		return (bird.x == this.x+this.w);
 	}
 
 	this.hits = function(){

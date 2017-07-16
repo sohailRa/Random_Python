@@ -1,10 +1,27 @@
+
 var bird;
+var score;
 var pipes = [];
+// var wing;
+// var hit;
+var die;
+// var point;
+
+function preload(){
+	// wing = loadsound("sounds/bell.mp3");
+	// hit = loadSound("sounds/hit.wav");
+	// die = loadSound("die.wav");
+	// point = loadSound("sounds/point.wav");
+}
+
 function setup(){
 	createCanvas(400,600);
 	bird = new Bird();
 	pipes.push(new Pipe());
+	score = 0;
+
 }
+
 
 function draw(){
 	background(0);
@@ -13,12 +30,19 @@ function draw(){
 		pipes[i].update();
 
 		if(pipes[i].hits(bird)){
-			console.log("HIT");
+			console.log("HIT");textSize(64);
+			fill(255,0,0);
+			textAlign(CENTER);
+			text("Game Over!", width/2, height/2);
+			// die.play();
+			noLoop();
 		}
 
 		if(pipes[i].offscreen()){
 			pipes.splice(i, 1);
 		}
+		if(pipes[i].point(bird))
+			score++;
 	}
 	bird.show();
 	bird.update();
@@ -26,10 +50,19 @@ function draw(){
 	if(frameCount % 80 == 0){
 		pipes.push(new Pipe());
 	}
+
+	
+	textSize(64);
+	fill(0,102,153);
+	textAlign(CENTER);
+	text(score, width/2, 70);
 }
+
+
 
 function keyPressed(){
 	if(key == ' '){
 		bird.up();
 	}
 }
+
